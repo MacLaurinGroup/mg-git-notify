@@ -99,7 +99,6 @@
                   <mainClass>io.maclaurin.git.notify.start.Start</mainClass>
                 </transformer>
               </transformers>
-              <outputFile>target/${project.artifactId}-${project.version}.jar</outputFile>
             </configuration>
           </execution>
         </executions>
