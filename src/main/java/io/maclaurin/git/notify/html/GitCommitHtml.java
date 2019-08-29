@@ -62,7 +62,7 @@ public class GitCommitHtml implements GitHtmlI {
           dt(b("Commit: ")), 
           commitName,
           dt(b("Message: ")), 
-          dd(i(commit.getFullMessage().trim())),
+          dd(i(rawHtml(getFormattedMessage()))),
           dt(b("Author: ")), 
           dd(
             i(
@@ -94,4 +94,9 @@ public class GitCommitHtml implements GitHtmlI {
     ).render();
   }
 
+  private String getFormattedMessage() {
+    String fullMsg = commit.getFullMessage().trim();
+    fullMsg = fullMsg.replaceAll("\r\n|\r|\n","<br>");
+    return fullMsg;
+  }
 }
